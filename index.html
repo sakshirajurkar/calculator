@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <title>CALCULATOR</title>
+    <script>
+        function pressButton(buttonValue){
+            let calText =document.querySelector(".input-screen").value + buttonValue + "";
+            document.querySelector(".input-screen").value = calText;
+        }
+        
+        function calculate()
+        {
+            let calText =document.querySelector(".input-screen").value ;
+            document.querySelector(".input-screen").value = eval(calText);
+        }
+        function clearscreen(){
+            document.querySelector(".input-screen").value ="";
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'Digital';
+            src:url('DS-DIGIT.TTF') format('truetype');
+        }
+        
+        .calculator {
+            width: 300px;
+            height: 450px;
+            background-color: #0088cc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .name{
+            font-size:15px;
+            font-weight: bold;
+
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .btn {
+            height: 60px;
+            width: 65px;
+            font-size: 30px;
+            background-color:#b3e0ff
+;
+            border-radius: 10px;
+            border: 2px solid grey;
+            font-weight: bold;
+            border:1px blue solid;
+        }
+
+        .btn:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 2px 2px gray;
+            margin: 5px;
+            
+        }
+
+        .bg-6666ff {
+            background-color: #1aa3ff;
+            border:  0px solid ;
+            
+           
+        }
+
+        .input-screen {
+            background-color: #00e6e6;
+            width: 300px;
+            height: 60px;
+            margin-bottom: 20px;
+            font-size: 35px;
+            border-radius: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+   <div class="calculator">
+        <div class="name">CASIO</div>
+        <div class="screen">
+            <input type="text" id="input" class="input-screen">
+
+        </div>
+        <div class="row">
+            <button class="btn bg-6666ff"onclick="clearscreen('AC')">AC</button>
+            <button class="btn bg-6666ff"onclick="pressButton('+/-')">+/-</button>
+            <button class="btn bg-6666ff"onclick="pressButton('%')">%</button>
+            <button class="btn bg-6666ff"onclick="pressButton('/')">÷</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick="pressButton(7)">7</button>
+            <button class="btn"onclick="pressButton(8)">8</button>
+            <button class="btn"onclick="pressButton(9)">9</button>
+            <button class="btn bg-6666ff"onclick="pressButton('*')">×</button>
+        </div>
+
+        <div class="row">
+            <button class="btn"onclick="pressButton(4)">4</button>
+            <button class="btn"onclick="pressButton(5)">5</button>
+            <button class="btn"onclick="pressButton(6)">6</button>
+            <button class="btn bg-6666ff"onclick="pressButton('-')">-</button>
+        </div>
+
+
+        <div class="row">
+            <button class="btn"onclick="pressButton(1)">1</button>
+            <button class="btn"onclick="pressButton(2)">2</button>
+            <button class="btn"onclick="pressButton(3)">3</button>
+            <button class="btn bg-6666ff"onclick="pressButton('+')">+</button>
+        </div>
+        <div class="row">
+            <button class="btn"onclick="pressButton(0)">0</button>
+            <button class="btn bg-6666ff"onclick="pressButton('.')">.</button>
+            <button class="btn bg-6666ff"onclick="calculate()">=</button>
+
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>
